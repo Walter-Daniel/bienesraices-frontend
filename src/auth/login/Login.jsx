@@ -26,6 +26,7 @@ export const Login = () => {
       <div className="container-fluid">
           <Row justify="center" className="login-container">
             <Col xs={20} md={16} lg={10}>
+              <h1>Real<span>Estate</span></h1>
                 <h2>Iniciar Sesión</h2>
               <div className="last-container">
                 <Form
