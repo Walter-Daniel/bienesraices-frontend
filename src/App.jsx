@@ -3,82 +3,21 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { SmileOutlined, DownOutlined } from '@ant-design/icons';
 
-import { Alert, Dropdown, Space } from 'antd';
+import { Alert, Dropdown, Layout, Space } from 'antd';
+const { Header, Footer, Content } = Layout;
 
-function App() {
-  const [count, setCount] = useState(0)
+import React from 'react'
 
-  const items = [
-    {
-      key: '1',
-      label: (
-        <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
-          1st menu item
-        </a>
-      ),
-    },
-    {
-      key: '2',
-      label: (
-        <a target="_blank" rel="noopener noreferrer" href="https://www.aliyun.com">
-          2nd menu item (disabled)
-        </a>
-      ),
-      icon: <SmileOutlined />,
-      disabled: true,
-    },
-    {
-      key: '3',
-      label: (
-        <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
-          3rd menu item (disabled)
-        </a>
-      ),
-      disabled: true,
-    },
-    {
-      key: '4',
-      danger: true,
-      label: 'a danger item',
-    },
-  ];
 
+export const App = () => {
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <Dropdown
-        menu={{
-          items,
-        }}
-      >
-        <a onClick={(e) => e.preventDefault()}>
-          <Space>
-            Hover me
-            <DownOutlined />
-          </Space>
-        </a>
-  </Dropdown>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    <Layout>
+      <Header >Header</Header>
+      <Content >Content</Content>
+      <Footer >Footer</Footer>
+    </Layout>
   )
 }
+
 
 export default App
