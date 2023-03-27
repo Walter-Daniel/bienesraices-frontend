@@ -6,12 +6,13 @@ import { store } from './store/store';
 import { Provider } from 'react-redux';
 
 import 'antd/dist/reset.css';
-import './index.css'
+import './styles.css'
+import { Login } from './auth/login/Login';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={ store } >
-      <App />
+      <Login />
     </Provider>
   </React.StrictMode>,
 )

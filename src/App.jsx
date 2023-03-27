@@ -3,9 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { SmileOutlined, DownOutlined } from '@ant-design/icons';
 
-import './App.css'
 import { Alert, Dropdown, Space } from 'antd';
-import DropdownButton from 'antd/es/dropdown/dropdown-button';
 
 function App() {
   const [count, setCount] = useState(0)

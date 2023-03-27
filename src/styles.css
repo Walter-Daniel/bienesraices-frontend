@@ -1,0 +1,28 @@
+:root {
+  --main-color: #ebebeb;
+  --color-2: #2b2d42;
+  --color-3: #8d99ae;
+  --color-4: #ef233c;
+  --color-5: #a00c1e;
+  --color-6: #ffd60a;
+  --color-white: #fff;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* h1, h2 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: bold;
+} */
+
+.container-fluid {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 15px;
+  overflow: hidden;
+}
+ 
