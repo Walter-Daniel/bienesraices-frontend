@@ -7,6 +7,7 @@ import { Alert, Dropdown, Layout, Space } from 'antd';
 const { Header, Footer, Content } = Layout;
 
 import React from 'react'
+import { AppRouter } from './router';
 
 
 export const App = () => {
