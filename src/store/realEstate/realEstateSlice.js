@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   isSaving: false,
@@ -14,7 +14,7 @@ export const realEstateSlice = createSlice({
     startLoadingHouses: (state) => {
       state.messageSaved = 'hola desde el reducer'
     },
-  },
+  }, 
 });
 
 export const { increment } = realEstateSlice.actions;
