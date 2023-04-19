@@ -13,7 +13,7 @@ import { AppRouter } from './router';
 export const App = () => {
   return (
     <Layout>
-      <Header >Header</Header>
+      <Header ><h1>Bienes Raices</h1></Header>
       <Content >Content</Content>
       <Footer >Footer</Footer>
     </Layout>
