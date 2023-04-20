@@ -1,4 +1,5 @@
 import { Button, Checkbox, Col, Form, Input, notification, Row } from 'antd';
+import { Link } from 'react-router-dom';
 
 export const Login = () => {
 
@@ -91,7 +92,17 @@ export const Login = () => {
                       span: 16,
                     }}
                   >
-                    <Checkbox>Recuerdame</Checkbox>
+                    <Link to='/auth/register'>¿No tienes una cuenta?. Registrate</Link>
+                  </Form.Item>
+                  <Form.Item
+                    name="remember"
+                    valuePropName="checked"
+                    wrapperCol={{
+                      offset: 8,
+                      span: 16,
+                    }}
+                  >
+                    <Link to='/auth/recoverpassword'>¿Te olvidaste la contraseña?</Link>
                   </Form.Item>
 
                   <Form.Item
