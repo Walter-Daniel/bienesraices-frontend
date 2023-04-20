@@ -1,13 +1,12 @@
 import { Button, Checkbox, Col, Form, Input, notification, Row } from 'antd';
 import { Link } from 'react-router-dom';
 
-export const Register = () => {
+export const Password = () => {
 
-  const passwordPattern =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
   const onFinish = (values) => {
     console.log('Success:', values);
-    openNotification('Registro exitoso', 'Te enviaremos un mail de confirmación a tu correo', 'success')
+    openNotification('Te hemos enviado un correo', 'Por favor, revisa tu email y sigue los pasos', 'success')
   };
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
@@ -28,7 +27,7 @@ export const Register = () => {
           <Row justify="center" className="login-container">
             <Col xs={20} md={16} lg={10}>
               <h1>Real<span>Estate</span></h1>
-                <h2>Crear Cuenta</h2>
+                <h2>Recuperar Contraseña</h2>
               <div className="last-container">
                 <Form
                   name="basic"
@@ -50,17 +49,6 @@ export const Register = () => {
                   autoComplete="on"
                   layout="vertical"
                 >
-                   <Form.Item
-                    name='fullName'
-                    label="Nombre completo"
-                    rules={[
-                      {
-                        required: true,
-                      },
-                    ]}
-                  >
-                    <Input />
-                  </Form.Item>
                   <Form.Item
                     label="Correo"
                     name="email"
@@ -74,48 +62,6 @@ export const Register = () => {
                   >
                     <Input />
                   </Form.Item>
-
-                  <Form.Item
-                    label="Contraseña"
-                    name="password"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Por favor ingrese su contraseña!",
-                      },
-                      {
-                        min: 6,
-                        max: 12,
-                        pattern: passwordPattern,
-                        message:
-                          "La contraseña debe contener: entre 6 y 12 caracteres y por lo menos una letra mayúscula, una minúscula, un número y un carácter especial(@$!%*?&).",
-                      },
-                    ]}
-                  >
-                    <Input.Password />
-                  </Form.Item>
-                  <Form.Item
-                    name="confirm"
-                    label="Confirm Password"
-                    dependencies={['password']}
-                    hasFeedback
-                    rules={[
-                      {
-                        required: true,
-                        message: 'Por favor, confirma tu contraseña',
-                      },
-                      ({ getFieldValue }) => ({
-                        validator(_, value) {
-                          if (!value || getFieldValue('password') === value) {
-                            return Promise.resolve();
-                          }
-                          return Promise.reject(new Error('Las contraseñas no coinciden'));
-                        },
-                      }),
-                    ]}
-                  >
-                    <Input.Password />
-                  </Form.Item>
                   <Form.Item
                     name="remember"
                     valuePropName="checked"
@@ -124,8 +70,9 @@ export const Register = () => {
                       span: 16,
                     }}
                   >
-                    <Link to='/auth/login'>¿Ya tienes una cuenta? Inicia sesión</Link>
+                    <Link to='/auth/login'>Regresar a Inicio de Sesión</Link>
                   </Form.Item>
+
                   <Form.Item
                     wrapperCol={{
                       offset: 8,
