@@ -1,14 +1,17 @@
 import { Button, Checkbox, Col, Form, Input, notification, Row } from 'antd';
 import { Link } from 'react-router-dom';
+import { useAuthStore } from '../../hooks';
 
 export const Login = () => {
 
+  const { startLogin } = useAuthStore();
+
   const passwordPattern =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
-  const onFinish = (values) => {
-    console.log('Success:', values);
-    openNotification('Bienvenido', 'Te damos la bienvenida NOMBRE', 'success')
-  };
+  const onFinish = ({ email, password }) => {
+    openNotification('Bienvenido', 'Te damos la bienvenida NOMBRE', 'success');
+    startLogin( email, password );
+  }
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
     openNotification('Login incorrecto', 'Asegurese de colocar de manera correcta sus datos', 'error')
