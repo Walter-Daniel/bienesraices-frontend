@@ -14,7 +14,17 @@ export const useAuthStore = () => {
         } catch (error) {
             console.log(error);
         }
-    }
+    };
+
+    const startRegister = async( name, email, password ) => {
+        console.log({name, email, password}, 'desde el startRegister')
+        try {
+            const resp = await bienesRaicesApi.post('/auth/register', {name, email, password});
+            console.log({resp})
+        } catch (error) {
+            console.log(error);
+        }
+    };
 
 
     return {
@@ -25,5 +35,6 @@ export const useAuthStore = () => {
 
         //Métodos
         startLogin,
+        startRegister,
     }
 }
