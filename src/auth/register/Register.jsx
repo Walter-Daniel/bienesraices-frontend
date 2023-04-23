@@ -1,12 +1,16 @@
 import { Button, Checkbox, Col, Form, Input, notification, Row } from 'antd';
 import { Link } from 'react-router-dom';
+import { useAuthStore } from '../../hooks';
 
 export const Register = () => {
 
+  const { startRegister } = useAuthStore();
+
   const passwordPattern =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
-  const onFinish = (values) => {
-    console.log('Success:', values);
+  const onFinish = ({ name, email, password }) => {
+    console.log('Success:', name, email, password);
+    startRegister(name, email, password)
     openNotification('Registro exitoso', 'Te enviaremos un mail de confirmación a tu correo', 'success')
   };
   const onFinishFailed = (errorInfo) => {
@@ -51,7 +55,7 @@ export const Register = () => {
                   layout="vertical"
                 >
                    <Form.Item
-                    name='fullName'
+                    name='name'
                     label="Nombre completo"
                     rules={[
                       {
