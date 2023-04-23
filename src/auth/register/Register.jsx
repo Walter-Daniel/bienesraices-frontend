@@ -1,7 +1,8 @@
-import { Button, Checkbox, Col, Form, Input, notification, Row } from 'antd';
+import { Button, Form, Input } from 'antd';
 import { Link } from 'react-router-dom';
 import { useAuthStore } from '../../hooks';
 import { LayoutPrincipal } from '../components/LayoutPrincipal'
+import { openNotification } from '../../helpers/openNotification';
 
 export const Register = () => {
 
@@ -10,23 +11,14 @@ export const Register = () => {
   const passwordPattern =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
   const onFinish = ({ name, email, password }) => {
-    console.log('Success:', name, email, password);
     startRegister(name, email, password)
     openNotification('Registro exitoso', 'Te enviaremos un mail de confirmación a tu correo', 'success')
   };
   const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
     openNotification('Login incorrecto', 'Asegurese de colocar de manera correcta sus datos', 'error')
   };
 
-  const openNotification = (message, description, type) => {
-    notification[type]({
-      message: message,
-      description: description,
-      placement: 'top'
-    });
-  };
-  const title = 'Crear una Cuenta'
+  const title = 'Crear una Cuenta';
 
   return (
     <>
@@ -121,7 +113,7 @@ export const Register = () => {
             name="remember"
             valuePropName="checked"
             wrapperCol={{
-              offset: 8,
+              offset: 0,
               span: 16,
             }}
           >
@@ -129,7 +121,7 @@ export const Register = () => {
           </Form.Item>
           <Form.Item
             wrapperCol={{
-              offset: 8,
+              offset: 0,
               span: 16,
             }}
           >

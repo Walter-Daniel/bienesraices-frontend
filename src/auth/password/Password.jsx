@@ -1,28 +1,17 @@
-import { Button, Checkbox, Col, Form, Input, notification, Row } from 'antd';
+import { Button, Form, Input } from 'antd';
 import { Link } from 'react-router-dom';
 import { LayoutPrincipal } from '../components/LayoutPrincipal';
+import { openNotification } from '../../helpers/openNotification';
 
 export const Password = () => {
 
-
   const onFinish = (values) => {
-    console.log('Success:', values);
     openNotification('Te hemos enviado un correo', 'Por favor, revisa tu email y sigue los pasos', 'success')
   };
   const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
-    openNotification('Login incorrecto', 'Asegurese de colocar de manera correcta sus datos', 'error')
+    openNotification('Campo vacío', 'Por favor, ingrese correctamente su email', 'error')
   };
-
-  const openNotification = (message, description, type) => {
-    notification[type]({
-      message: message,
-      description: description,
-      placement: 'top'
-    });
-  };
-
-  const title = 'Recuperar Contraseña'
+  const title = 'Recuperar Contraseña';
 
   return (
     <>
@@ -64,7 +53,7 @@ export const Password = () => {
             name="remember"
             valuePropName="checked"
             wrapperCol={{
-              offset: 8,
+              offset: 0,
               span: 16,
             }}
           >
@@ -73,7 +62,7 @@ export const Password = () => {
 
           <Form.Item
             wrapperCol={{
-              offset: 8,
+              offset: 0,
               span: 16,
             }}
           >

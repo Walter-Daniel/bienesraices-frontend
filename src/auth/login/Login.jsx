@@ -1,7 +1,8 @@
-import { Button, Checkbox, Col, Form, Input, notification, Row } from 'antd';
+import { Button, Form, Input } from 'antd';
 import { Link } from 'react-router-dom';
 import { useAuthStore } from '../../hooks';
 import { LayoutPrincipal } from '../components/LayoutPrincipal';
+import { openNotification } from '../../helpers/openNotification';
 
 export const Login = () => {
 
@@ -17,16 +18,8 @@ export const Login = () => {
     console.log('Failed:', errorInfo);
     openNotification('Login incorrecto', 'Asegurese de colocar de manera correcta sus datos', 'error')
   };
-
-  const openNotification = (message, description, type) => {
-    notification[type]({
-      message: message,
-      description: description,
-      placement: 'top'
-    });
-  };
   
-  const title = 'Iniciar Sesión'
+  const title = 'Iniciar Sesión';
 
   return (
     <>
@@ -89,7 +82,7 @@ export const Login = () => {
             name="remember"
             valuePropName="checked"
             wrapperCol={{
-              offset: 8,
+              offset: 0,
               span: 16,
             }}
           >
@@ -99,7 +92,7 @@ export const Login = () => {
             name="remember"
             valuePropName="checked"
             wrapperCol={{
-              offset: 8,
+              offset: 0,
               span: 16,
             }}
           >
@@ -108,7 +101,7 @@ export const Login = () => {
 
           <Form.Item
             wrapperCol={{
-              offset: 8,
+              offset: 0,
               span: 16,
             }}
           >
