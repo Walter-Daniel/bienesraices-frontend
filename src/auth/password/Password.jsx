@@ -9,7 +9,7 @@ export const Password = () => {
     openNotification('Te hemos enviado un correo', 'Por favor, revisa tu email y sigue los pasos', 'success')
   };
   const onFinishFailed = (errorInfo) => {
-    openNotification('Campo vacío', 'Por favor, ingrese correctamente su email', 'error')
+    openNotification('Error al ingresar el email', 'Por favor, ingrese correctamente su email', 'error')
   };
   const title = 'Recuperar Contraseña';
 

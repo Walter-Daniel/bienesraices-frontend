@@ -89,7 +89,7 @@ export const Register = () => {
           </Form.Item>
           <Form.Item
             name="confirm"
-            label="Confirm Password"
+            label="Confirmar contraseña"
             dependencies={['password']}
             hasFeedback
             rules={[
