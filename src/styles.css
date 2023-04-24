@@ -53,6 +53,9 @@
   font-size: 3.5rem;
   font-weight: bold;
 }
+.login-container h1::first-letter{
+  color: #a00c1e;
+}
 .login-container h1>span {
   font-weight: lighter;
   text-decoration: underline;

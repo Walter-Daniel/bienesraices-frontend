@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux"
 import bienesRaicesApi from "../api/bienesRaicesApi";
+import { openNotification } from "../helpers/openNotification";
 
 export const useAuthStore = () => {
 
@@ -7,7 +8,6 @@ export const useAuthStore = () => {
     const dispatch = useDispatch();
 
     const startLogin = async( email, password ) => {
-        console.log({email, password}, 'desde el startlogin')
         try {
             const resp = await bienesRaicesApi.post('/auth', {email, password});
             console.log({resp})
@@ -17,12 +17,13 @@ export const useAuthStore = () => {
     };
 
     const startRegister = async( name, email, password ) => {
-        console.log({name, email, password}, 'desde el startRegister')
         try {
             const resp = await bienesRaicesApi.post('/auth/register', {name, email, password});
-            console.log({resp})
-        } catch (error) {
-            console.log(error);
+            console.log(resp)
+            openNotification('Registro exitoso', 'Hemos enviado un Email de confirmación, por favor haz click en el enlace', 'success')
+        } catch ({response}) {
+            const { msg } = response.data
+            openNotification('Error al ingresar el email', `${msg}` , 'error')
         }
     };
 
