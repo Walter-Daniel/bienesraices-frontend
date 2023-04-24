@@ -4,6 +4,7 @@ import { Login } from '../auth/login/Login'
 import { Register } from '../auth/register/Register'
 import { PrincipalLayout } from '../iu/layout/PrincipalLayout';
 import { Password } from '../auth/password/Password';
+import { Confirm } from '../auth/confirm/Confirm';
 
 export const AppRouter = createBrowserRouter([
     {
@@ -22,4 +23,8 @@ export const AppRouter = createBrowserRouter([
       path: "/auth/recoverpassword",
       element: <Password />,
     },
+    {
+      path: "/auth/confirm/:token?",
+      element: <Confirm />
+    }
 ]);

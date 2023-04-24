@@ -2,7 +2,6 @@ import { Button, Form, Input } from 'antd';
 import { Link } from 'react-router-dom';
 import { useAuthStore } from '../../hooks';
 import { LayoutPrincipal } from '../components/LayoutPrincipal'
-import { openNotification } from '../../helpers/openNotification';
 
 export const Register = () => {
 
@@ -11,11 +10,7 @@ export const Register = () => {
   const passwordPattern =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
   const onFinish = ({ name, email, password }) => {
-    startRegister(name, email, password)
-    openNotification('Registro exitoso', 'Te enviaremos un mail de confirmación a tu correo', 'success')
-  };
-  const onFinishFailed = (errorInfo) => {
-    openNotification('Login incorrecto', 'Asegurese de colocar de manera correcta sus datos', 'error')
+    startRegister(name, email, password);
   };
 
   const title = 'Crear una Cuenta';
@@ -39,7 +34,6 @@ export const Register = () => {
             remember: true,
           }}
           onFinish={onFinish}
-          onFinishFailed={onFinishFailed}
           autoComplete="on"
           layout="vertical"
         >
