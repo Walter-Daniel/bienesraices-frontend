@@ -51,6 +51,28 @@ export const useAuthStore = () => {
             openNotification('Error al ingresar el email', `${response.data.msg}`, 'error')
 
         }
+    };
+
+    const checkTokenPassword = async(token) => {
+        console.log(token, 'token desde el check')
+        try {
+            const resp = await bienesRaicesApi.post('/auth/check-token', {token});
+            console.log(resp)
+            dispatch( confirmToken( resp.data.msg ) )
+        } catch (error) {
+            console.log(error)
+        }
+    };
+
+    const newPassword = async(password, token) => {
+        console.log(password, 'Desde el new password')
+        try {
+            const resp = await bienesRaicesApi.post('/auth/new-password', {token, password});
+            console.log(resp)
+            dispatch( confirmToken( resp.data.msg ) )
+        } catch (error) {
+            console.log(error)
+        }
     }
 
 
@@ -65,5 +87,7 @@ export const useAuthStore = () => {
         startRegister,
         confirmEmail,
         resetPassword,
+        checkTokenPassword,
+        newPassword
     }
 }
