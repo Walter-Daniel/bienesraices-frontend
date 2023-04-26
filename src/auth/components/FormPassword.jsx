@@ -1,11 +1,13 @@
 import { Button, Form, Input } from "antd";
+import { useAuthStore } from "../../hooks";
 
-export const FormPassword = () => {
+export const FormPassword = ({token}) => {
+  const { newPassword } = useAuthStore();
   const passwordPattern =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
   const onFinish = ({ password }) => {
-    console.log(password);
+    newPassword(password, token)
   };
 
   return (
@@ -79,7 +81,7 @@ export const FormPassword = () => {
           }}
         >
           <Button type="primary" htmlType="submit">
-            Enviar
+            Guardar Password
           </Button>
         </Form.Item>
       </Form>
