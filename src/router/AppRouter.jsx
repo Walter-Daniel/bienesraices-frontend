@@ -20,7 +20,7 @@ export const AppRouter = createBrowserRouter([
       element: <Register />,
     },
     {
-      path: "/auth/recoverpassword",
+      path: "/auth/recoverpassword/:token?",
       element: <Password />,
     },
     {

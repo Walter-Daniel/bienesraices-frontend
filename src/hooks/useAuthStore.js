@@ -39,6 +39,20 @@ export const useAuthStore = () => {
         }
     };
 
+    const resetPassword = async(email) => {
+        try {
+            const resp = await bienesRaicesApi.post('/auth/reset-password', {email});
+            console.log(resp)
+            // dispatch( confirmToken( resp.data.msg ) );
+            openNotification('Te hemos enviado un correo', 'Por favor, revisa tu email y sigue los pasos', 'success')
+            
+        } catch (error) {
+            const {response} = error;
+            openNotification('Error al ingresar el email', `${response.data.msg}`, 'error')
+
+        }
+    }
+
 
     return {
         //Propiedades
@@ -50,5 +64,6 @@ export const useAuthStore = () => {
         startLogin,
         startRegister,
         confirmEmail,
+        resetPassword,
     }
 }

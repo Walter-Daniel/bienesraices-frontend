@@ -23,7 +23,6 @@ export const authSlice = createSlice({
     confirmToken: ( state, { payload }) => {
         state.message = payload
     }
-    
   },
 });
 
