@@ -1,5 +1,7 @@
+import { Link } from 'react-router-dom';
+
 import { Space, Typography } from 'antd';
-const { Text, Link } = Typography;
+const { Text } = Typography;
 
 import { LayoutPrincipal } from '../components/LayoutPrincipal';
 import { useAuthStore } from '../../hooks/useAuthStore';
@@ -18,7 +20,10 @@ export const Confirm = () => {
             {
               ( (!message ) || message !== 'El usuario ha sido confirmado' 
                               ? <Text>Hubo un error al activar la cuenta</Text>
-                              : <Text>Su cuenta ha sido activada</Text>
+                              : <>
+                                  <Text>Su cuenta ha sido activada.</Text>
+                                  <Link to='/auth/login'>Inicia sesión</Link>
+                                </>                           
               )
             }         
           </Space>
