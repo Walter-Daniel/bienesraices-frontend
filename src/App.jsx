@@ -8,12 +8,15 @@ const { Header, Footer, Content } = Layout;
 
 import React from 'react'
 import { AppRouter } from './router';
+import { Navbar } from './iu/components/Navbar';
 
 
 export const App = () => {
   return (
     <Layout>
-      <Header ><h1>Bienes Raices</h1></Header>
+      <Header >
+        <Navbar />
+      </Header>
       <Content >
         <AppRouter />
       </Content>

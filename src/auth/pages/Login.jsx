@@ -96,7 +96,7 @@ export const Login = () => {
               span: 16,
             }}
           >
-            <Link to='/auth/recoverpassword'>¿Te olvidaste la contraseña?</Link>
+            <Link to='/auth/recover-password'>¿Te olvidaste la contraseña?</Link>
           </Form.Item>
 
           <Form.Item
