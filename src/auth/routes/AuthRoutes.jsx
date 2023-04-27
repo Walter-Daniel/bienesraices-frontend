@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom"
-import { Login, Register } from "../pages"
+import { Login, Password, Register } from "../pages"
 
 
 export const AuthRoutes = () => {
@@ -7,6 +7,7 @@ export const AuthRoutes = () => {
     <Routes>
         <Route path="login" element={<Login />}/>
         <Route path="register" element={<Register />} />
+        <Route path="recover-password" element={ <Password/> } />
     </Routes>
   )
 }
