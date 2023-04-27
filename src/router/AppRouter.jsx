@@ -1,30 +1,23 @@
 
-import { createBrowserRouter } from 'react-router-dom'
-import { Login } from '../auth/login/Login'
-import { Register } from '../auth/register/Register'
+import { Route, Routes, createBrowserRouter } from 'react-router-dom';
 import { PrincipalLayout } from '../iu/layout/PrincipalLayout';
-import { Password } from '../auth/password/Password';
-import { Confirm } from '../auth/confirm/Confirm';
+import { Confirm, Login, Password, Register } from '../auth';
+import { AuthRoutes } from '../auth/routes/AuthRoutes';
 
-export const AppRouter = createBrowserRouter([
-    {
-      path: "/",
-      element: <PrincipalLayout />,
-    },
-    {
-      path: "/auth/login",
-      element: <Login />,
-    },
-    {
-      path: "/auth/register",
-      element: <Register />,
-    },
-    {
-      path: "/auth/recoverpassword/:token?",
-      element: <Password />,
-    },
-    {
-      path: "/auth/confirm/:token?",
-      element: <Confirm />
-    }
-]);
+
+export const AppRouter = () => {
+
+  const status = 'non-authenticated'
+
+  return (
+        <Routes>
+          {/* {
+            (status === 'authenticated') ? <Route path='/' />
+                                         : 
+          } */}
+          <Route path='/' element={ <PrincipalLayout /> } />
+          <Route path='/auth/*' element={<AuthRoutes />}/>
+        </Routes>
+  )
+
+}
