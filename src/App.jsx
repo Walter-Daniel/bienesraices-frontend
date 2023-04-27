@@ -14,7 +14,9 @@ export const App = () => {
   return (
     <Layout>
       <Header ><h1>Bienes Raices</h1></Header>
-      <Content >Content</Content>
+      <Content >
+        <AppRouter />
+      </Content>
       <Footer >Footer</Footer>
     </Layout>
   )
