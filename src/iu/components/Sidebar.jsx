@@ -1,18 +1,26 @@
 import { Avatar, List } from 'antd';
+import { HomeOutlined, MenuUnfoldOutlined, FormOutlined, LoginOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
+
 const data = [
   {
-    title: 'Ant Design Title 1',
+    key: '1',
+    label: <Link to="/">Inicio</Link>,
+    icon: <HomeOutlined />,
+
   },
   {
-    title: 'Ant Design Title 2',
+    key: '2',
+    label: <Link to='/auth/login'>Inicia Sesión</Link>,
+    icon: <LoginOutlined />,
+
   },
   {
-    title: 'Ant Design Title 3',
+    key: '3',
+    label: <Link to='/auth/register'>Registrate</Link>,
+    icon: <FormOutlined />,
   },
-  {
-    title: 'Ant Design Title 4',
-  },
-];
+]
 export const Sidebar = () => (
   <List
     itemLayout="horizontal"
@@ -20,9 +28,8 @@ export const Sidebar = () => (
     renderItem={(item, index) => (
       <List.Item>
         <List.Item.Meta
-          avatar={<Avatar src={`https://xsgames.co/randomusers/avatar.php?g=pixel&key=${index}`} />}
-          title={<a href="https://ant.design">{item.title}</a>}
-          description="Ant Design, a design language for background applications, is refined by Ant UED Team"
+          avatar={item.icon}
+          title={item.label}
         />
       </List.Item>
     )}
