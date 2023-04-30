@@ -1,10 +1,8 @@
 import { Layout } from 'antd';
 const { Header, Footer, Content } = Layout;
 
-import React from 'react'
 import { AppRouter } from './router';
-import { Navbar } from './iu/components/Navbar';
-
+import { Navbar } from './iu/components';
 
 export const App = () => {
   return (

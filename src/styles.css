@@ -15,12 +15,6 @@
   border: 0;
 }
 
-/* h1, h2 {
-  font-family: 'Oswald', sans-serif;
-  font-weight: bold;
-} */
-
-
 .container-fluid {
   margin: 0 auto;
   max-width: 1200px;
@@ -29,12 +23,33 @@
   /* background-color: #14213d; */
 }
 /*************************** NAVBAR *********************************/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.navbar h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+/* .login-container h1::first-letter{
+  color: #a00c1e;
+} */
+.navbar h1>span {
+  font-weight: lighter;
+}
 @media all and (min-width:320px) {
   .mobile-responsive{
     display: block;
   }
 }
 @media all and (min-width: 768px) {
+  .navbar ul {
+    display: flex;
+    justify-content: flex-end;
+  }
   .mobile-responsive{
     display: none;
   }
@@ -65,9 +80,9 @@
   font-size: 3.5rem;
   font-weight: bold;
 }
-.login-container h1::first-letter{
+/* .login-container h1::first-letter{
   color: #a00c1e;
-}
+} */
 .login-container h1>span {
   font-weight: lighter;
   text-decoration: underline;
