@@ -1,22 +1,24 @@
 
-import { Route, Routes, createBrowserRouter } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { PrincipalLayout } from '../iu/layout/PrincipalLayout';
-import { Confirm, Login, Password, Register } from '../auth';
 import { AuthRoutes } from '../auth/routes/AuthRoutes';
+import { RealEstateRoutes } from '../realEstate/routes/RealEstateRoutes';
 
 
 export const AppRouter = () => {
 
-  const status = 'non-authenticated'
+  const status = 'authenticated'
 
   return (
         <Routes>
           {/* {
-            (status === 'authenticated') ? <Route path='/' />
-                                         : 
+            (status === 'authenticated') ? <Route path='/*' element={<RealEstateRoutes />} /> 
+                                         : <Route path='/auth/*' element={<AuthRoutes />}/>
+                                   
           } */}
-          <Route path='/' element={ <PrincipalLayout /> } />
-          <Route path='/auth/*' element={<AuthRoutes />}/>
+          {/* <Route path='/' element={ <PrincipalLayout /> } /> */}
+          <Route path='/*' element={<RealEstateRoutes />} /> 
+          
         </Routes>
   )
 
