@@ -7,7 +7,7 @@ import { Navbar } from './iu/components';
 export const App = () => {
   return (
     <Layout>
-      <Header >
+      <Header className='container-header'>
         <Navbar />
       </Header>
       <Content >

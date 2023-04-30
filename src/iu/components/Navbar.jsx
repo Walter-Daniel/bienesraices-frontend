@@ -47,12 +47,11 @@ export const Navbar = () => {
       <h1>Bienes<span>Raices</span></h1>
         <Col xs={0} sm={0} md={12}>
           <Menu
-          theme="dark"
-          mode="horizontal"
-          ref={ nodeRef }
-          items={linksNavbar}
-          defaultSelectedKeys={['1']}
-        />
+            mode="horizontal"
+            ref={ nodeRef }
+            items={linksNavbar}
+            className="container-menu"
+          />
         </Col> 
         <div className="mobile-responsive">
           <Button type="primary" className='btn-second' onClick={showDrawer}>
