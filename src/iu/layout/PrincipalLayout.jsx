@@ -1,5 +1,4 @@
-import { Alert, Dropdown, Layout, Space } from 'antd';
-const { Header, Footer, Content } = Layout;
+import { Layout } from 'antd';
 
 export const PrincipalLayout = () => {
   return (
