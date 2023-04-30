@@ -1,6 +1,5 @@
 import { Col, Row } from 'antd';
 
-
 export const LayoutPrincipal = ({ children, title }) => {
 
   return (
