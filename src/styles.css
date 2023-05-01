@@ -1,12 +1,9 @@
 :root {
-  --main-color: #fefae0;
-  /* --main-color: #ebebeb; */
-  --color-2: #2b2d42;
-  --color-3: #8d99ae;
-  --color-4: #ef233c;
-  --color-5: #a00c1e;
-  --color-6: #ffd60a;
-  /* --color-white: #fff; */
+  --main-color: #0E0B16;
+  --color-1: #A239CA;
+  --color-2: #4717F6;
+  --color-3: #E7DFDD;
+  --color-white: #FFFFFF;
 }
 
 *{
@@ -22,21 +19,54 @@
   overflow: hidden;
   /* background-color: #14213d; */
 }
+/*************************** BUTTON *********************************/
+.btn-primary {
+  background-color: var(--color-2);
+  color: var(--color-white);
+}
+.ant-btn-primary {
+  background-color: var(--color-2);
+  color: var(--color-white);
+}
 /*************************** NAVBAR *********************************/
+.container-header {
+  background: var(--main-color);
+}
 .navbar {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  height: 100%;
 }
 .navbar h1 {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.4rem;
   font-weight: bold;
   color: #ffffff;
 }
-/* .login-container h1::first-letter{
-  color: #a00c1e;
-} */
+@media all and (min-width:768px ){
+  .navbar h1 {
+    font-size: 2rem;
+  }
+}
+.container-menu {
+  background: var(--main-color);
+  color: var(--color-white);
+}
+.ant-menu-light.ant-menu-horizontal>.ant-menu-item-selected {
+  color: var(--color-white);
+  background-color: var(--color-1);
+}
+.ant-menu-light.ant-menu-horizontal>.ant-menu-item:hover,
+.ant-menu-light.ant-menu-horizontal>.ant-menu-item:focus{
+  color: var(--color-white);
+  background-color: var(--color-1);
+}
+
+.ant-menu-light.ant-menu-horizontal>.ant-menu-item:hover::after,
+.ant-menu-horizontal>.ant-menu-item-active::after {
+  border-bottom-color: var(--color-1);
+}
 .navbar h1>span {
   font-weight: lighter;
 }
@@ -141,4 +171,20 @@
 }
 form {
   color: aliceblue;
+}
+/*************************** ADMINISTRATION ******************************/
+@media all and (min-width: 320px){
+  .container-administration {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+@media all and (min-width: 768px){
+  .container-administration {
+    display: block;
+  }
+}
+.container-administration h2 {
+  text-align: center;
 }
