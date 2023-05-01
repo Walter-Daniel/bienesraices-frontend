@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { Button } from "antd";
+import { Button, Col, Row } from "antd";
 import { ModalEstate } from "../components";
-
 
 export const Administration = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -10,11 +9,15 @@ export const Administration = () => {
     };
   return (
     <>
-        <h1>Bienvenidos a Bienes Raices - Tucumám</h1>
-        <Button type="primary" className="btn-primary" onClick={showModal}>
-         Publicar Propiedades
-        </Button>
-        <ModalEstate setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen}/>
+      <Row justify="center">
+        <Col >
+          <h2>Mis Propiedades</h2>
+            <Button type="primary" className="btn-primary btn-modal1" onClick={showModal}>
+              Publicar Propiedades
+            </Button>
+        </Col>
+      </Row>
+      <ModalEstate setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen}/>
     </>
   )
 }

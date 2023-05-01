@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
 import React, { useState } from 'react';
 
-import { Layout, Menu, Row, Col, Button, Drawer } from 'antd';
-import { HomeOutlined, MenuUnfoldOutlined, FormOutlined, LoginOutlined } from '@ant-design/icons';
+import { Menu, Row, Col, Button, Drawer } from 'antd';
+import { MenuUnfoldOutlined } from '@ant-design/icons';
 import { Sidebar } from "./Sidebar";
+import { userLinks, publicLinks } from '../../realEstate/helpers/LinksNavbar';
 
 
 export const Navbar = () => {
@@ -18,28 +18,6 @@ export const Navbar = () => {
     setVisible(false);
   };
 
-  const linksNavbar = [
-    {
-      key: '1',
-      label: <Link to="/">Inicio</Link>,
-      icon: <HomeOutlined />,
-
-    },
-    {
-      key: '2',
-      label: <Link to='/auth/login'>Inicia Sesión</Link>,
-      icon: <LoginOutlined />,
-
-    },
-    {
-      key: '3',
-      label: <Link to='/auth/register'>Registrate</Link>,
-      icon: <FormOutlined />,
-    },
-  ]
-
-  
-
   const nodeRef = React.useRef(null);
    
   return (
@@ -49,7 +27,7 @@ export const Navbar = () => {
           <Menu
             mode="horizontal"
             ref={ nodeRef }
-            items={linksNavbar}
+            items={ userLinks }
             className="container-menu"
           />
         </Col> 

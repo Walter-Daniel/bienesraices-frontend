@@ -24,6 +24,10 @@
   background-color: var(--color-2);
   color: var(--color-white);
 }
+.ant-btn-primary {
+  background-color: var(--color-2);
+  color: var(--color-white);
+}
 /*************************** NAVBAR *********************************/
 .container-header {
   background: var(--main-color);
@@ -32,26 +36,36 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  background-color: var(--main-color);
+  height: 100%;
 }
 .navbar h1 {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.4rem;
   font-weight: bold;
   color: #ffffff;
+}
+@media all and (min-width:768px ){
+  .navbar h1 {
+    font-size: 2rem;
+  }
 }
 .container-menu {
   background: var(--main-color);
   color: var(--color-white);
 }
-.container-menu li:hover,
-.container-menu li:focus {
-  background: var(--color-1) !important;
-  color: var(--color-white) !important;
-
+.ant-menu-light.ant-menu-horizontal>.ant-menu-item-selected {
+  color: var(--color-white);
+  background-color: var(--color-1);
 }
-.ant-menu-item-active::after {
-  border-bottom-color: var(--color-1)!important;
+.ant-menu-light.ant-menu-horizontal>.ant-menu-item:hover,
+.ant-menu-light.ant-menu-horizontal>.ant-menu-item:focus{
+  color: var(--color-white);
+  background-color: var(--color-1);
+}
+
+.ant-menu-light.ant-menu-horizontal>.ant-menu-item:hover::after,
+.ant-menu-horizontal>.ant-menu-item-active::after {
+  border-bottom-color: var(--color-1);
 }
 .navbar h1>span {
   font-weight: lighter;
@@ -157,4 +171,20 @@
 }
 form {
   color: aliceblue;
+}
+/*************************** ADMINISTRATION ******************************/
+@media all and (min-width: 320px){
+  .container-administration {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+@media all and (min-width: 768px){
+  .container-administration {
+    display: block;
+  }
+}
+.container-administration h2 {
+  text-align: center;
 }
