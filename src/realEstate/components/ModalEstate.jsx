@@ -34,7 +34,8 @@ export const ModalEstate = ({ isModalOpen, setIsModalOpen }) => {
                 .catch((info) => {
                   console.log('Validate Failed:', info);
                 });
-              }}>
+              }}
+              >
             <FormEstate form={form}/>
         </Modal>
     </>

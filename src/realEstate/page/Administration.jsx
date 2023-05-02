@@ -9,7 +9,7 @@ export const Administration = () => {
     };
   return (
     <>
-      <Row justify="center">
+      <Row justify="center" className="container-fluid">
         <Col >
           <h2>Mis Propiedades</h2>
             <Button type="primary" className="btn-primary btn-modal1" onClick={showModal}>
