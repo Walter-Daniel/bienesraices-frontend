@@ -5,14 +5,12 @@ export const DarkTheme = ({ children }) => {
     <ConfigProvider 
         theme={{
             token:{
-                colorPrimary: "#4ec5c1",
-                
+                colorPrimary: "#4ec5c1"           
             },
             algorithm: theme.darkAlgorithm
         }}
     >
         {children}
     </ConfigProvider>
-     
   )
-}
+};

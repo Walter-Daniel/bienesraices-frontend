@@ -171,6 +171,9 @@ form {
   color: aliceblue;
 }
 /*************************** ADMINISTRATION ******************************/
+.ant-layout-content {
+  color: var(--color-white);
+}
 @media all and (min-width: 320px){
   .container-administration {
     display: flex;
@@ -185,4 +188,8 @@ form {
 }
 .container-administration h2 {
   text-align: center;
+}
+/*************************** FOOTER ******************************/
+.ant-layout-footer {
+  background-color: var(--color-4);
 }

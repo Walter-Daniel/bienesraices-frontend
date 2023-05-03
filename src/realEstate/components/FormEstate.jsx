@@ -1,4 +1,5 @@
 import { Button, Col, Form, Input, Radio, Row, Select, Upload } from 'antd';
+const { TextArea } = Input;
 import { UploadOutlined } from '@ant-design/icons';
 
 export const FormEstate = ({form}) => {
@@ -30,7 +31,19 @@ export const FormEstate = ({form}) => {
           },
         ]}
       >
-        <Input placeholder="3 Amb Todo Externo con Balcón - ¡Oportunidad!" />
+        <Input placeholder='Título Propiedad ej: 3 Amb Todo Externo con Balcón - ¡Oportunidad!' />
+      </Form.Item>
+      <Form.Item
+        name="description"
+        label="Description"
+        rules={[
+          {
+            required: true,
+            message: "Por favor, ingrese información sobre la propiedad",
+          },
+        ]}
+      >
+        <TextArea rows={3} placeholder='Descripción de la Propiedad' />
       </Form.Item>
       <Row justify={{ sm: 'none', lg: 'space-between' }}>
         <Col xs={24} lg={11}>
@@ -168,25 +181,13 @@ export const FormEstate = ({form}) => {
         </Col>
       </Row>
       <Form.Item
-        name="description"
-        label="Description"
-        rules={[
-          {
-            required: true,
-            message: "Por favor, ingrese información sobre la propiedad",
-          },
-        ]}
-      >
-        <Input type="textarea" />
-      </Form.Item>
-
-      <Form.Item
-        name="modifier"
+        name="state"
         className="collection-create-form_last-form-item"
+        label='Estado:'
       >
         <Radio.Group>
-          <Radio value="public">Público</Radio>
-          <Radio value="private">Privado</Radio>
+          <Radio value="true">Público</Radio>
+          <Radio value="false">Privado</Radio>
         </Radio.Group>
       </Form.Item>
     </Form>

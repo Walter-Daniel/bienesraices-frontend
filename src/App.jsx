@@ -12,7 +12,7 @@ export const App = () => {
         <Header style={{ background:'rgb(38, 41, 43)' }}>
           <Navbar />
         </Header>
-        <Content style={{ background:'#0E0B16', color:'#ffffff'}}>
+        <Content>
           <AppRouter />
         </Content>
         <Footer >Footer</Footer>
