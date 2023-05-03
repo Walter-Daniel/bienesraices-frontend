@@ -1,8 +1,9 @@
 :root {
   --main-color: #0E0B16;
-  --color-1: #A239CA;
-  --color-2: #4717F6;
-  --color-3: #E7DFDD;
+  --color-1: #ec576b;
+  --color-2: #4ec5c1;
+  --color-3: #e5e338;
+  --color-4: rgb(38, 41, 43);
   --color-white: #FFFFFF;
 }
 
@@ -19,15 +20,12 @@
   overflow: hidden;
   /* background-color: #14213d; */
 }
-/*************************** BUTTON *********************************/
-.btn-primary {
-  background-color: var(--color-2);
+
+.ant-input::placeholder {
   color: var(--color-white);
+  opacity: 0.5;
 }
-.ant-btn-primary {
-  background-color: var(--color-2);
-  color: var(--color-white);
-}
+
 /*************************** NAVBAR *********************************/
 .container-header {
   background: var(--main-color);
@@ -50,7 +48,7 @@
   }
 }
 .container-menu {
-  background: var(--main-color);
+  background: var(--color-4);
   color: var(--color-white);
 }
 .ant-menu-light.ant-menu-horizontal>.ant-menu-item-selected {
@@ -173,6 +171,9 @@ form {
   color: aliceblue;
 }
 /*************************** ADMINISTRATION ******************************/
+.ant-layout-content {
+  color: var(--color-white);
+}
 @media all and (min-width: 320px){
   .container-administration {
     display: flex;
@@ -187,4 +188,8 @@ form {
 }
 .container-administration h2 {
   text-align: center;
+}
+/*************************** FOOTER ******************************/
+.ant-layout-footer {
+  background-color: var(--color-4);
 }

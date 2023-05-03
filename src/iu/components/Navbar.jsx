@@ -21,7 +21,7 @@ export const Navbar = () => {
   const nodeRef = React.useRef(null);
    
   return (
-    <Row className="navbar">
+    <Row className="navbar" style={{ background:'rgb(38, 41, 43)' }}>
       <h1>Bienes<span>Raices</span></h1>
         <Col xs={0} sm={0} md={12}>
           <Menu
