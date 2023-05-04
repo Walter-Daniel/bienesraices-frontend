@@ -17,4 +17,4 @@ export const LayoutPrincipal = ({ children, title }) => {
       </div>
     </>
   )
-}
+};

@@ -29,6 +29,10 @@ export const FormEstate = ({form}) => {
             required: true,
             message: "Por favor, ingrese el título del anuncio.",
           },
+          {
+            max: 30,
+            message: 'El título debe tener como máximo de 30 carácteres'
+          }
         ]}
       >
         <Input placeholder='Título Propiedad ej: 3 Amb Todo Externo con Balcón - ¡Oportunidad!' />
@@ -44,6 +48,22 @@ export const FormEstate = ({form}) => {
         ]}
       >
         <TextArea rows={3} placeholder='Descripción de la Propiedad' />
+      </Form.Item>
+      <Form.Item
+        name="direction"
+        label="Dirección"
+        rules={[
+          {
+            required: true,
+            message: "Por favor, ingrese la dirección de la propiedad.",
+          },
+          {
+            max: 30,
+            message: 'La dirección debe tener como máximo de 30 carácteres'
+          }
+        ]}
+      >
+        <Input placeholder='Calle Japón 4444' />
       </Form.Item>
       <Row justify={{ sm: 'none', lg: 'space-between' }}>
         <Col xs={24} lg={11}>
