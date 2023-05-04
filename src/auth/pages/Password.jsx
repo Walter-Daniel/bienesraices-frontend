@@ -7,7 +7,6 @@ export const Password = () => {
 
   const pathdivider = window.location.pathname.split('/');
   const token = pathdivider[pathdivider.length -1];
-  console.log(token)
   const { checkTokenPassword, message } = useAuthStore();
   checkTokenPassword(token)
   const title = 'Recuperar Contraseña';
@@ -22,5 +21,5 @@ export const Password = () => {
       </LayoutPrincipal>
     </>
   )
-}
+};
   
