@@ -54,6 +54,7 @@ export const useAuthStore = () => {
     };
 
     const checkTokenPassword = async(token) => {
+        // if( token === 'recover-password' ) throw new Error ('lalaa')
         console.log(token, 'token desde el check')
         try {
             const resp = await bienesRaicesApi.post('/auth/check-token', {token});

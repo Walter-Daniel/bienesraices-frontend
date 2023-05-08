@@ -19,6 +19,8 @@ export const Navbar = () => {
   };
 
   const nodeRef = React.useRef(null);
+
+  const status = 'non-authenticated';
    
   return (
     <Row className="navbar" style={{ background:'rgb(38, 41, 43)' }}>
@@ -27,7 +29,7 @@ export const Navbar = () => {
           <Menu
             mode="horizontal"
             ref={ nodeRef }
-            items={ userLinks }
+            items={ ( status === 'authenticated') ? userLinks : publicLinks }
             className="container-menu"
           />
         </Col> 
