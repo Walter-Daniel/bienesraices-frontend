@@ -7,17 +7,17 @@ import { RealEstateRoutes } from '../realEstate/routes/RealEstateRoutes';
 
 export const AppRouter = () => {
 
-  const status = 'authenticated'
+  const status = 'non-authenticated'
 
   return (
         <Routes>
-          {/* {
+          {
             (status === 'authenticated') ? <Route path='/*' element={<RealEstateRoutes />} /> 
                                          : <Route path='/auth/*' element={<AuthRoutes />}/>
                                    
-          } */}
+          }
           {/* <Route path='/' element={ <PrincipalLayout /> } /> */}
-          <Route path='/*' element={<RealEstateRoutes />} /> 
+          {/* <Route path='/*' element={<RealEstateRoutes />} />  */}
           
         </Routes>
   )
