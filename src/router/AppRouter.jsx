@@ -1,13 +1,12 @@
 
 import { Route, Routes } from 'react-router-dom';
-import { PrincipalLayout } from '../iu/layout/PrincipalLayout';
 import { AuthRoutes } from '../auth/routes/AuthRoutes';
 import { RealEstateRoutes } from '../realEstate/routes/RealEstateRoutes';
 
 
 export const AppRouter = () => {
 
-  const status = 'non-authenticated'
+  const status = 'authenticated';
 
   return (
         <Routes>

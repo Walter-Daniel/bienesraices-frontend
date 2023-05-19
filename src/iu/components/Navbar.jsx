@@ -20,7 +20,7 @@ export const Navbar = () => {
 
   const nodeRef = React.useRef(null);
 
-  const status = 'non-authenticated';
+  const status = 'authenticated';
    
   return (
     <Row className="navbar" style={{ background:'rgb(38, 41, 43)' }}>
